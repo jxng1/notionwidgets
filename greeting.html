@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html> 
 <head>
     <title>Greeting Message</title> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <style>
 #lbl {
     font-family: monospace;
@@ -17,9 +19,7 @@
 #date{
     font-size:large;
 }
-body{
-    background-color: #E119B9;
-}
+        
     </style>
 </head>
 <body>
@@ -27,6 +27,15 @@ body{
 </body>
 
 <script>
+    setInterval(function() {
+        // get cheerlights csolor from field2 with webservice call
+        $.getJSON('https://api.thingspeak.com/channels/1417/feed/last.json?callback=?', function (data) {
+        // if the field2 has data, update background color of the page
+          if (data.field2) {
+            $("body").css("background-color", data.field2);
+          }
+        });
+    },1000);
     var weekday = new Array(7);
     weekday[0] = "Sunday";
     weekday[1] = "Monday";
