@@ -49,7 +49,8 @@
     
     var today = new Date();
     var hrs = today.getHours().slice(0,2);
-    var minutes = today.getHourse().slice(2,4);
+    hrs = hrs.slice(0,2);    
+    minutes = hrs.slice(2,4);
     var dayOfWeek = weekday[today.getDay()];
     var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear();
     var time = "    " + hrs + ":" + minutes;
