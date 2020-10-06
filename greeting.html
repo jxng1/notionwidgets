@@ -48,17 +48,14 @@
 
     
     var today = new Date();
-    var hrs = today.getHours().toTimeString();
-    hrs = hrs.slice(0,2);    
-    minutes = hrs.slice(2,4);
+    var hrs = today.getHours();
+    var minutes = today.getMinutes();
     var dayOfWeek = weekday[today.getDay()];
     var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear();
     var time = "    " + hrs + ":" + minutes;
     
     console.log(hrs);
-    console.log(minutes);
-    console.log(time);
-
+    
     var greet;
 
     if (hrs < 12)
