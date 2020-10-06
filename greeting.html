@@ -62,7 +62,7 @@
         greet = 'Good Evening  ';
     
     var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear();
-    var time = "    " + ("0" + hrs.slice(-2)) + ":" + minutes;
+    var time = "    " + ("0" + hrs).slice(-2) + ":" + minutes;
 
     document.getElementById('lbl').innerHTML =
         greet+=`<div id="date"> It's ${date}${time}</div>`;
