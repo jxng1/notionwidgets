@@ -50,6 +50,7 @@
     var today = new Date();
     var hrs = today.getHours();
     var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
     var dayOfWeek = weekday[today.getDay()];
     
     var greet;      
@@ -62,7 +63,7 @@
         greet = 'Good Evening  ';
     
     var date = dayOfWeek+" " + today.getDate() + "/" +(today.getMonth()+1) +'/'+today.getFullYear();
-    var time = "    " + ("0" + hrs).slice(-2) + ":" + minutes;
+    var time = "    " + ("0" + hrs).slice(-2) + ":" + ("0" + minutes).slice(-2) + ":" + ("0" + seconds).slice(-2);
 
     document.getElementById('lbl').innerHTML =
         greet+=`<div id="date"> It's ${date}${time}</div>`;
